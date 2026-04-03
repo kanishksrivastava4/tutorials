@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@layer components {
+  .calc-page {
+    @apply min-h-screen bg-slate-50 flex items-center justify-center p-4 text-slate-800;
+  }
+
+  .calc-card {
+    @apply w-full max-w-sm bg-white rounded-3xl shadow-2xl p-8;
+  }
+
+  .calc-title {
+    @apply text-slate-400 text-xs font-black uppercase tracking-widest mb-8 text-center;
+  }
+
+  .calc-inputs {
+    @apply flex flex-col gap-4 mb-8;
+  }
+
+  .input-field {
+    @apply w-full bg-slate-100 rounded-2xl p-4 text-xl font-semibold outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 transition-all;
+  }
+
+  .calc-grid {
+    @apply grid grid-cols-4 gap-3 mb-8;
+  }
+
+  .btn-op {
+    @apply h-14 flex items-center justify-center bg-slate-100 hover:bg-blue-600 hover:text-white text-xl font-bold rounded-2xl transition-all active:scale-90;
+  }
+
+  .calc-result {
+    @apply bg-blue-600 rounded-3xl p-6 text-white;
+  }
+
+  .result-value {
+    @apply text-3xl font-bold;
+  }
+}
