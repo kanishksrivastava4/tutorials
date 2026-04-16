@@ -1,3 +1,4 @@
-**/*.json
 .env
-**/credentials/it.env
+it.env
+**/credentials/
+node_modules/
