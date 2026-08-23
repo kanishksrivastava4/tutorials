@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Socket.io Test</title></head>
+<body>
+  <input id="msg" type="text" placeholder="Type a message" />
+  <button onclick="sendMessage()">Send</button>
+  <ul id="log"></ul>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script>
+    const socket = io('http://localhost:3000');
+
+    socket.on('server-message', (data) => {
+      const li = document.createElement('li');
+      const time = new Date(data.timestamp).toLocaleTimeString();
+      li.textContent = `[${time}] ${data.text}`;
+      document.getElementById('log').appendChild(li);
+    });
+
+    function sendMessage() {
+      const text = document.getElementById('msg').value;
+      socket.emit('client-message', { text });
+    }
+  </script>
+</body>
+</html>
